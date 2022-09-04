@@ -219,7 +219,7 @@ func DownloadMarkdown(cType string, id int, path string) error {
 			return err
 		}
 		for _, v := range list.List {
-			detail, enId, err := app.ArticleDetail(id, v.ID)
+			detail, _, err := app.ArticleDetail(id, v.ID)
 			if err != nil {
 				fmt.Println(err.Error())
 				return err
@@ -231,7 +231,7 @@ func DownloadMarkdown(cType string, id int, path string) error {
 				return err
 			}
 
-			name := utils.FileName(v.Title, "md")
+			name := utils.FileName(strconv.Itoa(detail.Article.CreateTime)+"@"+v.Title, "md")
 			fileName := filepath.Join(path, name)
 			fmt.Printf("正在生成文件：【\033[37;1m%s\033[0m】 ", name)
 			_, exist, err := utils.FileSize(fileName)
@@ -247,11 +247,11 @@ func DownloadMarkdown(cType string, id int, path string) error {
 			}
 
 			res := contentsToMarkdown(content)
-			// 添加留言
-			commentList, err := app.ArticleCommentList(enId, "like", 1, 20)
-			if err == nil {
-				res += articleCommentsToMarkdown(commentList.List)
-			}
+			// 添加留言 -- 暂时取消
+			// commentList, err := app.ArticleCommentList(enId, "like", 1, 20)
+			// if err == nil {
+			// 	res += articleCommentsToMarkdown(commentList.List)
+			// }
 
 			f, err := os.OpenFile(fileName, os.O_CREATE|os.O_WRONLY, 0644)
 			if err != nil {

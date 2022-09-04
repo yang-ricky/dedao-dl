@@ -43,7 +43,7 @@ type Article struct {
 	ID          int64  `json:"Id"`
 	AppID       int    `json:"AppId"`
 	Version     int    `json:"Version"`
-	CreateTime  int    `json:"CreateTime"`
+	CreateTime  int    `json:"CreateTime"` //KEY: 文章创建时间
 	UpdateTime  int    `json:"UpdateTime"`
 	PublishTime int    `json:"PublishTime"`
 	Status      int    `json:"Status"`
@@ -378,6 +378,7 @@ func (s *Service) ArticleInfo(enid string) (info *ArticleInfo, err error) {
 // ArticleDetail get article detail
 func (s *Service) ArticleDetail(token, id, appID string) (detail *ArticleDetail, err error) {
 
+	//KEY: 捞文章内容
 	body, err := s.reqArticleDetail(token, appID)
 	if err != nil {
 		return
