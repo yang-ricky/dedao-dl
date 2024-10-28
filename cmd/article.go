@@ -235,7 +235,6 @@ func DownloadMarkdown(cType string, id int, path string) error {
 			fileName := filepath.Join(path, name)
 			fmt.Printf("正在生成文件：【\033[37;1m%s\033[0m】 ", name)
 			_, exist, err := utils.FileSize(fileName)
-
 			if err != nil {
 				fmt.Printf("\033[31;1m%s\033[0m\n", "失败"+err.Error())
 				return err

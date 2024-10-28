@@ -1,27 +1,13 @@
 # dedao-dl
 
-> 🦉 用 go 写的一个 《得到》 APP 课程下载工具，使用 cookie 登录后，可在终端查看已购买的课程，听书书架，电子书架，锦囊，推荐话题等
-
-![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/yann0917/dedao-dl)
-
-## 特别声明
-
-仅供个人学习使用，请尊重版权，内容版权均为得到所有，请勿传播内容！！！
-
-仅供个人学习使用，请尊重版权，内容版权均为得到所有，请勿传播内容！！！
-
-仅供个人学习使用，请尊重版权，内容版权均为得到所有，请勿传播内容！！！
-
-## 特性
-
-* 可查看**购买**的课程，课程文章内容
-* 可查看听书书架，电子书架列表
-* 可查看已购买的锦囊
-* 可查看知识城邦推荐话题精选内容
-* 课程可生成PDF，文稿生成 Markdown 文档，也可生成 mp3 文件
-* 每天听本书可下载音频
-* 电子书可下载 pdf(有 bug ，待解决)
-* 可切换登录账号
+## 本地安装
+* go build -o dedao-dl main.go
+* 二维码登陆 - ./dedao-dl login -q
+* Cookie登陆 - ./dedao-dllogin -c "xxxxxxxx", 这里xxxx可以用账号等到web上，然后查看某个请求，见cookie.jpg
+* 查看课程分类 - ./dedao-dl cat 
+* 查看我买的课程 - ./dedao-dl course, 见my_course.png
+* 下载我买的课程markdown - ./dedao-dl dl 262 -t 3, 见markdown.png
+* 下载我买的课程pdf - ./dedao-dl dl 262 -t 2 ❌，正常情况下不成功，所以不建议尝试
 
 ## 安装
 

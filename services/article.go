@@ -13,20 +13,20 @@ type Content struct {
 	AliasID  string      `json:"aliasId"`
 	Contents interface{} `json:"contents"`
 	Desc     string      `json:"desc"`
-	Duration int64       `json:"duration"`
-	Height   int64       `json:"height"`
-	Jump     string      `json:"jump"`
-	Justify  string      `json:"justify"`
-	Legend   string      `json:"legend"`
-	Level    int         `json:"level"`
-	Size     int64       `json:"size"`
-	Text     string      `json:"text"`
-	Title    string      `json:"title"`
-	Type     string      `json:"type"`
-	Ordered  bool        `json:"ordered"`
-	URL      string      `json:"url"`
-	Width    int64       `json:"width"`
-	Labels   []string    `json:"labels"`
+	//Duration int64       `json:"duration"`, 暂时注销by ricky, 因为有时候会遇到整型有时候会遇到字符型
+	Height  int64    `json:"height"`
+	Jump    string   `json:"jump"`
+	Justify string   `json:"justify"`
+	Legend  string   `json:"legend"`
+	Level   int      `json:"level"`
+	Size    int64    `json:"size"`
+	Text    string   `json:"text"`
+	Title   string   `json:"title"`
+	Type    string   `json:"type"`
+	Ordered bool     `json:"ordered"`
+	URL     string   `json:"url"`
+	Width   int64    `json:"width"`
+	Labels  []string `json:"labels"`
 }
 
 type Contents []struct {
