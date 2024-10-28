@@ -32,5 +32,4 @@ dedao-dl_*
 # macOS
 .DS_Store
 
-output/
 config.json
